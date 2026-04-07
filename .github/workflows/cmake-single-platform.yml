@@ -33,10 +33,12 @@ jobs:
     - name: Install koopa to /usr/local
       run: |
         cd /tmp/koopa
-        sudo mkdir -p /usr/local/lib/native
-        sudo cp target/release/libkoopa.a /usr/local/lib/native/
+        sudo mkdir -p /usr/local/lib
+        sudo cp target/release/libkoopa.a /usr/local/lib/
         sudo mkdir -p /usr/local/include
         sudo cp -R libkoopa/include/* /usr/local/include/
+        ls -l /usr/local/lib/libkoopa.a
+        sudo ldconfig -v | grep koopa
 
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
