@@ -2,3 +2,5 @@
 build
 codegen/generate_code_1.hpp
 test_riscv.sh
+.idea
+*.iml
